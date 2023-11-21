@@ -25,7 +25,7 @@ function displayBooks() {
       <p>Pages: ${book.pages}</p>
       <p>Status: ${book.read ? "Read" : "Not Read"}</p>
       <button onclick="removeBook(${index})">Remove</button>
-      <button onclick="toggleReadStatus(${index})">Toggle Read Status</button>
+      <button onclick="toggleReadStatus(${index})">Toggle Read Status</button>      
     `;
     libraryContainer.appendChild(bookCard);
   });
@@ -62,4 +62,9 @@ document.getElementById("book-form").addEventListener("submit", (event) => {
   document.getElementById("author").value = "";
   document.getElementById("pages").value = "";
   document.getElementById("read").checked = false;
+
+
+  // Hide the form after submission
+  const newBookForm = document.getElementById("new-book-form");
+  newBookForm.classList.add("hidden");
 });
